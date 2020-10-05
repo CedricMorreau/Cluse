@@ -24,21 +24,7 @@
         <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
         <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
 
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-        <script src=“{{ ‘slick.js’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick.css’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick.less’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick.scss’ | asset_url }}” defer=“defer”></script>
-
-        <script src=“{{ ‘slick-theme.css’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick-theme.less’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick-theme.scss’ | asset_url }}” defer=“defer”></script>
-        <script src=“{{ ‘slick.min.js’ | asset_url }}” defer=“defer”></script>
-
-        <script src=“{{ ‘config.rb’ | asset_url }}” defer=“defer”></script>
-
+        <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
 
         {%- if canonical_url != blank  -%}
             <link rel="canonical" href="{{ canonical_url }}">
@@ -214,6 +200,8 @@
   </ul>
 
   {{ 'custom.scss' | asset_url | stylesheet_tag }}
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html> 
     </head>
