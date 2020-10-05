@@ -1,0 +1,54 @@
+<div class="section6 section max-width">
+    <div class="imageCollection--content--wrapper">
+        <h3>{{ section.settings.imageCollectionTitle }}</h3>
+        <div class="line"></div>
+        {{section.settings.imageCollectionRichtext}}
+    </div>
+
+    <div class="imageCollection--image--wrapper">
+        {%- for block in section.blocks -%}
+            <img class="imageCollection--image" src="{{block.settings.imageCollection | img_url: "master"}}"/>
+        {%- endfor -%}
+    </div>
+</div>
+
+
+{% schema %}
+
+{
+    "name": "image collection",
+    "settings": [
+        {
+            "type": "text",
+            "default": "title",
+            "label": "title",
+            "id": "imageCollectionTitle"
+        }, {
+            "type": "richtext",
+            "id": "imageCollectionRichtext",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "image",
+            "type": "image_picker",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "imageCollection",
+                    "label": "image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "image collection",
+            "category": "Custom section"
+        }
+    ]
+}
+
+{% endschema %}

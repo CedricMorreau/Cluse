@@ -1,0 +1,74 @@
+<div class="section4 section max-width">
+   <div class="mixWatch--content">
+        <h3>{{section.settings.mixWatchHeading}}</h3>
+        <div class="line"></div>
+        {{section.settings.column_richtext}}
+        
+        
+        
+        {%- render 'button',
+        button_text: section.settings.mixWatch_text,
+        button_href: section.settings.mixWatch_url,
+        button_class: 'mixWatch--button button'
+        -%}
+    </div>
+
+    <div class="mixWatch--img">
+        {%- render 'image-size',
+            type : section.settings.mixWatchimg,
+            img_aspect_ratio: section.settings.mixWatchimg.aspect_ratio,
+            img_class: 'mixWatchimg' 
+            -%}
+    </div>
+
+
+    </div>
+</div>
+
+
+{% schema %}
+
+{
+	"name": "mix&watch",
+	"settings": [{
+			"type": "text",
+			"default": "title",
+			"label": "title",
+			"id": "mixWatchHeading"
+		},
+		{
+			"type": "richtext",
+			"id": "column_richtext",
+			"label": "Text",
+			"default": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>"
+                        		},
+                        
+                        
+                        	    {
+                        			"type": "text",
+                        			"id": "mixWatch_text",
+                        			"label": "button text"
+                                },
+                                
+                                {
+                        			"type": "url",
+                        			"id": "mixWatch_url",
+                        			"label": "button url"
+                        		},
+                        
+                        		{
+                        			"type": "image_picker",
+                        			"id": "mixWatchimg",
+                        			"label": "image"
+                        		}
+                        	],
+                        
+                        
+                        
+                        	"presets": [{
+                        		"name": "mix & watch",
+                        		"category": "Custom section"
+                        	}]
+                        }
+
+{% endschema %}
