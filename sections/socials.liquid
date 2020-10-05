@@ -1,0 +1,62 @@
+{%- assign image = section.settings.socialsBg | img_url: 'grande'  -%}
+
+
+<div class="section5 section max-width">
+    <div class="socials--wrapper" style="background-image: url({{ image }});">
+        <h4>{{ section.settings.socialsHeading}}</h4>
+
+        {%- for block in section.blocks -%}
+
+            <img class="socials--icon" src="{{block.settings.socialsIcon | img_url: "master"}}"/>
+        {%- endfor -%}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "socials",
+    "settings": [
+    {
+            "type": "text",
+            "id": "socialsHeading",
+            "label": "heading",
+            "default": "Heading",
+            "placeholder": "Heading"
+    },
+
+    {
+        "type": "image_picker",
+        "id": "socialsBg",
+        "label": "background image"
+    }
+
+],
+    "blocks": [
+        {
+            "name": "icon",
+            "type": "image_picker",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "socialsIcon",
+                    "label": "icon"
+                },
+
+                {
+                    "type": "url",
+				    "id": "",
+				    "label": "hero"
+                }
+            ]
+        }
+    ],
+
+    "presets": [
+        {
+            "name": "socials",
+            "category": "Custom section"
+        }
+    ]
+}
+{% endschema %}

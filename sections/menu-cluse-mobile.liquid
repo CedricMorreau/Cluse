@@ -1,0 +1,40 @@
+<div class="section2 max-width">
+    {%- for block in section.blocks -%}
+        <div class="menu--wrapper-button">
+            {%- render 'button',
+                    button_text: block.settings.CA_text,
+		                button_href: block.settings.product_url,
+                    button_class: 'collection--button button'
+            -%}
+        </div>
+    {%- endfor -%}
+</div>
+
+{% schema %}
+
+{
+
+
+	"blocks": [{
+		"type": "text",
+		"name": "button collection",
+		"settings": [{
+				"type": "url",
+				"id": "product_url",
+				"label": "collection"
+			},
+			{
+				"type": "text",
+				"id": "CA_text",
+				"label": "CA text"
+			}]
+	}],
+
+
+	"presets": [{
+		"name": "collection buttons",
+		"category": "Custom section"
+	}]
+}
+
+{% endschema %}

@@ -1,0 +1,88 @@
+<div class="section3 max-width section">
+    <div class="menu-grid-wapper">
+        <div class="WW menu--item">
+            <a href="{{section.settings.menuUrl}}">
+                <img src="{{section.settings.menuimg | img_url: "master"}}"/>
+                <span>{{section.settings.title}}</span>
+            </a>
+        </div>
+        <div class="MW menu--item">
+            <a href="{{section.settings.menuUrl2}}">
+                <img src="{{section.settings.menuimg2 | img_url: "master"}}"/>
+                <span>{{section.settings.title2}}</span>
+            </a>
+        </div>
+        <div class="GB menu--item">
+            <a href="{{section.settings.menuUrl3}}">
+                <img src="{{section.settings.menuimg3 | img_url: "master"}}"/>
+                <span>{{section.settings.title3}}</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% schema %}{
+
+    "name": "menu desktop",
+        "settings": [{
+            "type": "image_picker",
+            "id": "menuimg",
+            "label": "image picker left"
+        },
+
+        {
+            "type": "url",
+            "id": "menuUrl",
+            "label": "collection left"
+        },
+
+        {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+        },
+        
+        {
+            "type": "image_picker",
+            "id": "menuimg2",
+            "label": "image picker mid"
+        },
+
+        {
+            "type": "url",
+            "id": "menuUrl2",
+            "label": "collection mid"
+        },
+
+        {
+            "type": "text",
+            "id": "title2",
+            "label": "title"
+        },
+        
+        {
+            "type": "image_picker",
+            "id": "menuimg3",
+            "label": "image picker right"
+        },
+
+        {
+            "type": "url",
+            "id": "menuUrl3",
+            "label": "collection right"
+        },
+
+        {
+            "type": "text",
+            "id": "title3",
+            "label": "title"
+        }
+        
+        ],
+
+        "presets": [{
+            "name": "menu desktop",
+            "category": "Custom section"
+        }]
+}
+{% endschema %}

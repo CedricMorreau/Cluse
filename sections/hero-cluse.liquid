@@ -1,0 +1,90 @@
+{%- assign image = section.settings.image_1 | img_url: 'grande'  -%}
+
+<div class="section1">
+    <div class="hero--wrapper-content">
+        <h1 style="color: {{section.settings.text_color}};">
+            {{ section.settings.title }}
+        </h1>
+        <h2 style="color:{{section.settings.text_color}}">
+            {{ section.settings.under-title }}
+        </h2>
+
+        <div class="hero--wrapper-button">
+            {%- for block in section.blocks -%}
+                {%- render 'button',
+                    button_text: block.settings.CA_text,
+		                button_href: block.settings.product_url,
+                    button_class: 'hero--button button'
+  					-%}
+            {%- endfor -%}
+        </div>
+    </div>
+
+    <div class="hero--wrapper-image">
+        {%- render 'image-size',
+            type : section.settings.image_1,
+            img_aspect_ratio: section.settings.image_1.aspect_ratio
+            img_class: 'image_1' 
+            -%}
+    </div>
+</div>
+
+
+{% schema %}
+
+{
+	"name": "Hero",
+	"settings": [{
+			"id": "title",
+			"type": "text",
+			"label": "Title",
+			"default": "Title"
+        },
+        
+        {
+			"id": "under-title",
+			"type": "text",
+			"label": "Under Title (Desktop)",
+			"default": "Under title (Desktop)"
+		},
+
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Text Color for this title",
+			"default": "#000000"
+		},
+
+		{
+			"type": "image_picker",
+			"id": "image_1",
+			"label": "hero"
+		} 
+
+
+	],
+
+	"blocks": [{
+		"type": "text",
+		"name": "button block",
+		"settings": [{
+				"type": "url",
+				"id": "product_url",
+				"label": "hero"
+			},
+			{
+				"type": "text",
+				"id": "CA_text",
+				"label": "CA text"
+			}
+		]
+	}],
+
+
+	"presets": [{
+		"name": "Hero",
+		"category": "Custom section"
+	}]
+}
+
+{% endschema %}
