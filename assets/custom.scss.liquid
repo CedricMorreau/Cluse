@@ -163,13 +163,56 @@
   position: relative;
 }
 
-.socials--wrapper{
-  
-}
 
 .socials--icon{
   width: 10%;
 }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .carrousel__grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5fr 0.5fr 0.2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "caroussel__img"
+      "carrousel__button"
+      "carrousel__price"
+  }
+  .caroussel__img { grid-area: caroussel__img; }
+  .carrousel__button { grid-area: carrousel__button; }
+
+  .caroussel__img{
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+
 
 
 
@@ -211,8 +254,8 @@
   }
 
   .section {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .mixWatch--content {

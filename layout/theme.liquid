@@ -24,7 +24,7 @@
         <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
         <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
 
-        <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
         {%- if canonical_url != blank  -%}
             <link rel="canonical" href="{{ canonical_url }}">
@@ -170,6 +170,7 @@
   {{ content_for_header }}
 </head>
 
+
 <body class="template-{{ request.page_type | handle }}">
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
@@ -200,10 +201,12 @@
   </ul>
 
   {{ 'custom.scss' | asset_url | stylesheet_tag }}
-
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 </html> 
+    </head>
     </head>
     </head>
 </html>

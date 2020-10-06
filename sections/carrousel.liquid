@@ -1,0 +1,63 @@
+<div class="section6 section max-width">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+                <div class="swiper-slide carrousel__grid-container">
+                    <img class="caroussel__img" src="{{block.settings.imageCarousel | img_url: "master"}}"/>
+                    {%- render 'button',
+                            button_text: block.settings.carrouselButtonText,
+                            button_href: block.settings.carrouselButtonUrl,
+                            button_class: 'carrousel__button button'
+                    -%}
+
+                    {%- render 'button',
+                            button_text: block.settings.carrousel__price,
+                            button_href: block.settings.carrouselButtonUrl,
+                            button_class: 'carrousel__price button'
+                    -%}
+
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name":"carrousel",
+    
+    "blocks": [{
+		"type": "text",
+        "name": "carrousel item",
+		"settings": [{
+				"type": "url",
+				"id": "carrouselButtonUrl",
+				"label": "url"
+            },
+			{
+				"type": "text",
+				"id": "carrouselButtonText",
+				"label": "button text"
+            },
+
+            {
+				"type": "text",
+				"id": "carrousel__price",
+				"label": "price"
+            },
+            
+            {
+                "type": "image_picker",
+                "id": "imageCarousel",
+                "label": "image"
+            } 
+		]
+	}],
+
+    "presets": [{
+        "name": "carrousel",
+        "category": "Custom section"
+    }]
+}
+{% endschema %}
