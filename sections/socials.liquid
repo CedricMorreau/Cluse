@@ -2,13 +2,20 @@
 
 
 <div class="section5 section max-width">
-    <div class="socials--wrapper" style="background-image: url({{ image }});">
-        <h4>{{ section.settings.socialsHeading}}</h4>
+    <div class="socials--container">
+        <div class="socials--img" style="background-image: url({{ image }});">
+            <div class="socials--content">
+                <h4>{{ section.settings.socialsHeading}}</h4>
 
-        {%- for block in section.blocks -%}
+                <div class="line"></div>
 
-            <img class="socials--icon" src="{{block.settings.socialsIcon | img_url: "master"}}"/>
-        {%- endfor -%}
+                {%- for block in section.blocks -%}
+                    <a href="{{block.settings.socialsUrl}}">
+                        <img class="socialsIcon" src="{{block.settings.socialsIcon | img_url: "master"}}"/>
+                    </a>
+                {%- endfor -%}
+            </div>
+        </div>
     </div>
 </div>
 
@@ -45,8 +52,8 @@
 
                 {
                     "type": "url",
-				    "id": "",
-				    "label": "hero"
+				    "id": "socialsUrl",
+				    "label": "social url"
                 }
             ]
         }

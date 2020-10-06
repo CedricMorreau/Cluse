@@ -1,23 +1,29 @@
 <div class="section6 section max-width">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            {%- for block in section.blocks -%}
-                <div class="swiper-slide carrousel__grid-container">
-                    <img class="caroussel__img" src="{{block.settings.imageCarousel | img_url: "master"}}"/>
-                    {%- render 'button',
+
+    <div class="carrousel__container">
+        <h3>{{ section.settings.carrouselHeading }}</h3>
+
+        <div class="line"></div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {%- for block in section.blocks -%}
+                    <div class="swiper-slide carrousel__grid-container">
+                        <img class="caroussel__img" src="{{block.settings.imageCarousel | img_url: "master"}}"/>
+                        {%- render 'button',
                             button_text: block.settings.carrouselButtonText,
                             button_href: block.settings.carrouselButtonUrl,
                             button_class: 'carrousel__button button'
                     -%}
 
-                    {%- render 'button',
+                        {%- render 'button',
                             button_text: block.settings.carrousel__price,
                             button_href: block.settings.carrouselButtonUrl,
                             button_class: 'carrousel__price button'
                     -%}
-
-                </div>
-            {%- endfor -%}
+                    </div>
+                {%- endfor -%}
+            </div>
         </div>
     </div>
 </div>
@@ -26,6 +32,12 @@
 {% schema %}
 {
     "name":"carrousel",
+    "settings": [
+    {
+        "type": "text",
+        "id": "carrouselHeading",
+        "label": "heading"
+    }],
     
     "blocks": [{
 		"type": "text",
